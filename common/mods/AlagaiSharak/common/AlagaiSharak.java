@@ -23,7 +23,26 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class AlagaiSharak {
 
-
+    public static String texModifier = "AlagaiSharak" + ":";   
+    
+    public static String[] meta_names = new String[] {
+            "Rune0",
+            "Rune1",
+            "Rune2",
+            "Rune3",
+            "Rune4",
+            "Rune5",
+            "Rune6"
+    };
+    public static String[] meta_textures = new String[] {
+            texModifier + meta_names[0],
+            texModifier + meta_names[1],
+            texModifier + meta_names[2],
+            texModifier + meta_names[3],
+            texModifier + meta_names[4],
+            texModifier + meta_names[5],
+            texModifier + meta_names[6]
+    };
 
 
 	@Instance("AlagaiSharak")
@@ -74,8 +93,8 @@ public class AlagaiSharak {
 		OffenceWards = new ItemOffenceWards (OffenceWardsID).setUnlocalizedName("Offence Wards");
 		DefenceWards = new ItemDefenceWards (DefenceWardsID).setUnlocalizedName("Defence Wards");
 		BodyWards = new ItemBodyWards (BodyWardsID).setUnlocalizedName("Body Wards");
-		Runes = new ItemBodyWards (MetaItemID).setUnlocalizedName("Runes");
-		Runes1 = new ItemBodyWards (MetaItemID).setUnlocalizedName("Runes1");
+		Runes = new ItemRunes (MetaItemID, meta_names, meta_textures).setUnlocalizedName("Runes");
+		//Runes1 = new ItemBodyWards (MetaItemID).setUnlocalizedName("Runes1");
 		
 		gameRegisters();
 		languageRegisters();
@@ -99,7 +118,7 @@ public class AlagaiSharak {
 		GameRegistry.registerItem(DefenceWards, "Defence Wards");
 		GameRegistry.registerItem(BodyWards, "Body Wards");
 		GameRegistry.registerItem(Runes, "Runes");
-		GameRegistry.registerItem(Runes1, "Runes1");
+		//GameRegistry.registerItem(Runes1, "Runes1");
 	}
 	
 	private static void languageRegisters(){
@@ -107,7 +126,7 @@ public class AlagaiSharak {
 		LanguageRegistry.addName(DefenceWards, "Defence Wards");
 		LanguageRegistry.addName(BodyWards, "Body Wards");
 		LanguageRegistry.addName(Runes, "Runes");
-		LanguageRegistry.addName(Runes1, "Runes1");
+		//LanguageRegistry.addName(Runes1, "Runes1");
 	
 	}
 }
