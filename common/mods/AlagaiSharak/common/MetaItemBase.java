@@ -23,6 +23,7 @@ public class MetaItemBase extends Item {
 		this.textures = textures;
 		this.names = names;
 		this.icons = new Icon[textures.length];
+		this.setCreativeTab(AlagaiSharak.tabAlagaiSharak);
 	}
 
 	@Override
